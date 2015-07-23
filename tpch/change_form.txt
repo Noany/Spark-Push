@@ -1,0 +1,6 @@
+SELECT * FROM 
+	youhao_data left join youhao_age on (youhao_data.rowkey=youhao_age.rowkey) 
+	left join youhao_totalKiloMeter on (youhao_age.rowkey=youhao_totalKiloMeter.rowkey)
+SELECT * FROM 
+	(SELECT * FROM youhao_data left join youhao_age on (youhao_data.rowkey=youhao_age.rowkey)) tmp 
+	left join youhao_totalKiloMeter on (tmp.rowkey=youhao_totalKiloMeter.rowkey)
